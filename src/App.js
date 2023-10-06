@@ -2,53 +2,56 @@
 import './App.css';
 import "./Estilos/Cards.css";
 import BotonCarrito from './Componentes/Carrito';
-import Navegador from './Componentes/Navegador';
+import Navbar from './Componentes/Navbar';
 import Footer from './Componentes/Footer';
 import Etiquetas from './Componentes/Cards';
 import ConstructorProductos from './Constructor/Constructor';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+
 
 
 
 function App() {
 
+
+    
   return (
+    
+    
     <div className="App">
-     <h1 className='titulo'>BIKESTWOGO</h1>      
+    
+     <BrowserRouter>
 
-<div>
-  <BotonCarrito className="Carrito"></BotonCarrito>
-</div>
+     <Link className = "T" to='/'> <h1 className='titulo'>BIKESTWOGO</h1></Link>      
+    
+      <BotonCarrito></BotonCarrito>
 
-<div className="Navegador">
-  
-  <Navegador texto={"Inicio"}></Navegador>    
-  <Navegador texto={"Bicicletas"} ></Navegador>
-  <Navegador texto={"Componentes"}></Navegador>
-  <Navegador texto={"Accesorios"}></Navegador>
-  <Navegador texto={"Portafolio"}></Navegador>
-  <Navegador texto={"Servicios"}></Navegador>
-  <Navegador texto={"Contacto"}></Navegador>
-  
-</div> 
+     <Navbar/>
+     
+      
+        
+      <Routes>
+        <Route path='/' ></Route>
+        <Route path='/Constructor/Scott' element = {<ConstructorProductos valorSeleccionadoLista={"Scott"}></ConstructorProductos>}></Route>
+      </Routes>
+     
+     
+      <Etiquetas></Etiquetas>
+      <Etiquetas></Etiquetas>
+       
 
-<div className ='Tarjeta'>
- 
- <ConstructorProductos valorSeleccionadoLista = ""></ConstructorProductos>
- 
-</div>
+       <Footer></Footer>
+        { React.createElement("div",{ className:"Tarjeta"},"Imprimiendo mensaje")}
 
-<div className='Cards'>
-  <Etiquetas></Etiquetas>
-  <Etiquetas></Etiquetas>
-</div>
+      </BrowserRouter>
 
-<div>
-  <Footer></Footer>
-  { React.createElement("div",{ className:"Tarjeta"},"Imprimiendo mensaje")}
-</div>
     </div>
+
+
   );
 }
 
 export default App;
+
