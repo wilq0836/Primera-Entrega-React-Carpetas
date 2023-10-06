@@ -7,7 +7,7 @@ function Etiquetas (){
         <div className="cards"> 
         <div className="card1"> 
          <p>
-         <button className="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+         <button   className="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
      Toggle width collapse< img src={require( "../Imagenes/imag3.jpg")} alt="imagen"></img></button></p>
          <div >
              <div className="collapse" id="collapseWidthExample">
