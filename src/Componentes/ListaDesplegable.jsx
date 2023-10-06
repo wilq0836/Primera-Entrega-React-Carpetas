@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import Tarjeta from "./Tarjeta";
-import ConstructorProductos from "../Constructor/Constructor";
+import Imprimir from "../Constructor/ImprimirConstructor";
+
+
+
 
 
 function ListaDesplegable (props){
 
-    
+
 
     ListaItems(props.texto)
     
@@ -24,21 +26,28 @@ export default ListaDesplegable;
 
 function DesplegarItems (arreglo){
       
-    
+ 
+
 
     const [selectOption, setSelectOption] = useState ("");
 
-    const handleOption = (event) => setSelectOption(event);
+    const handleOption = (event) => {
+        setSelectOption(event)
+        
+        
+    };
 
     
 
     
     return(
+         
         <div>
-              <lu  className="dropdown-menu dropdown-menu-dark" >{arreglo.map((opcion)=>(<li onClick={()=>{handleOption(opcion.value)}} className="dropdown-item" key={opcion.value} >{opcion.value}</li>))}   
-              <li  className = "dropdown-item">Lista Dos</li> </lu>            
+              <lu  className="dropdown-menu dropdown-menu-dark" >{arreglo.map((opcion)=>(<li  onClick={()=>{handleOption(opcion.value)}}  className="dropdown-item" key={opcion.value} value={opcion.value} >{opcion.value}</li>))}   
+              </lu>            
                {selectOption}
-             
+               {Imprimir({selectOption})}
+              
               
         </div>
     
@@ -46,6 +55,8 @@ function DesplegarItems (arreglo){
     
     
 }/* <ConstructorProductos valorSeleccionadoLista={selectOption}></ConstructorProductos>*/
+
+
 
 
 
@@ -125,5 +136,7 @@ function ListaItems({texto}){
 
 
 }
+
+
 
 
