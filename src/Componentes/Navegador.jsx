@@ -1,25 +1,20 @@
 import React from "react";
 import ListaDesplegable from "./ListaDesplegable";
+import { Link } from "react-router-dom";
 
 
-function Navegador (props){
+function Navegador ({texto, texto2}){
 
+ 
     return (
-        <div>
-            <div className="navegador" >
-            <nav  className="navbar navbar-expand-lg ">
-                <div  className="dropdown">                              
-                    <lu   href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{props.texto}   
-                     </lu> 
-                     <ListaDesplegable texto = {props.texto} ></ListaDesplegable>
-                     
-                 </div> 
-                 
-            </nav>
 
-        </div> 
-         
-        </div>
+          
+                <div className="dropdown">                                                        
+                    <lu  role="button" data-bs-toggle="dropdown" aria-expanded="false">{texto}   
+                        <ListaDesplegable texto = {texto}></ListaDesplegable>
+                    </lu> 
+                </div>
+
     )
 }
 
